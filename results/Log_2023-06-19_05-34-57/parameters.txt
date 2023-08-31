@@ -1,0 +1,79 @@
+# -----------------------------------#
+# Parameters of the training session #
+# -----------------------------------#
+
+# Input parameters
+# ****************
+
+dataset = S3DIS
+dataset_task = cloud_segmentation
+num_classes = 9
+in_points_dim = 3
+in_features_dim = 5
+in_radius = 20.000000
+input_threads = 10
+
+# Model parameters
+# ****************
+
+architecture = simple AKPConv AKPConv AKPConv_strided AKPConv RRKA AKPConv_strided AKPConv RRKA AKPConv_strided AKPConv RRKA AKPConv_strided AKPConv RRKA AKPConv nearest_upsample GLCA nearest_upsample GLCA nearest_upsample GLCA nearest_upsample GLCA
+equivar_mode = 
+invar_mode = 
+num_layers = 5
+first_features_dim = 128
+use_batch_norm = 1
+batch_norm_momentum = 0.020000
+
+segmentation_ratio = 1.000000
+
+# KPConv parameters
+# *****************
+
+first_subsampling_dl = 0.450000
+num_kernel_points = 15
+conv_radius = 2.500000
+deform_radius = 5.000000
+fixed_kernel_points = center
+KP_extent = 1.200000
+KP_influence = linear
+aggregation_mode = sum
+modulated = 0
+n_frames = 1
+max_in_points = 0
+
+max_val_points = 50000
+
+val_radius = 51.000000
+
+# Training parameters
+# *******************
+
+learning_rate = 0.001000
+momentum = 0.980000
+lr_decay_epochs = 1:0.950000 2:0.950000 3:0.950000 4:0.950000 5:0.950000 6:0.950000 7:0.950000 8:0.950000 9:0.950000 10:0.950000 11:0.950000 12:0.950000 13:0.950000 14:0.950000 15:0.950000 16:0.950000 17:0.950000 18:0.950000 19:0.950000 20:0.950000 21:0.950000 22:0.950000 23:0.950000 24:0.950000 25:0.950000 26:0.950000 27:0.950000 28:0.950000 29:0.950000 30:0.950000 31:0.950000 32:0.950000 33:0.950000 34:0.950000 35:0.950000 36:0.950000 37:0.950000 38:0.950000 39:0.950000 40:0.950000 41:0.950000 42:0.950000 43:0.950000 44:0.950000 45:0.950000 46:0.950000 47:0.950000 48:0.950000 49:0.950000 50:0.950000 51:0.950000 52:0.950000 53:0.950000 54:0.950000 55:0.950000 56:0.950000 57:0.950000 58:0.950000 59:0.950000 60:0.950000 61:0.950000 62:0.950000 63:0.950000 64:0.950000 65:0.950000 66:0.950000 67:0.950000 68:0.950000 69:0.950000 70:0.950000 71:0.950000 72:0.950000 73:0.950000 74:0.950000 75:0.950000 76:0.950000 77:0.950000 78:0.950000 79:0.950000 80:0.950000 81:0.950000 82:0.950000 83:0.950000 84:0.950000 85:0.950000 86:0.950000 87:0.950000 88:0.950000 89:0.950000 90:0.950000 91:0.950000 92:0.950000 93:0.950000 94:0.950000 95:0.950000 96:0.950000 97:0.950000 98:0.950000 99:0.950000
+grad_clip_norm = 100.000000
+
+augment_symmetries = 1 0 0
+augment_rotation = vertical
+augment_noise = 0.001000
+augment_occlusion = none
+augment_occlusion_ratio = 0.200000
+augment_occlusion_num = 1
+augment_scale_anisotropic = 1
+augment_scale_min = 0.900000
+augment_scale_max = 1.100000
+augment_color = 0.800000
+
+weight_decay = 0.001000
+segloss_balance = none
+class_w =
+deform_fitting_mode = point2point
+deform_fitting_power = 1.000000
+deform_lr_factor = 0.100000
+repulse_extent = 1.200000
+batch_num = 4
+val_batch_num = 10
+max_epoch = 100
+epoch_steps = 500
+validation_size = 50
+checkpoint_gap = 1
