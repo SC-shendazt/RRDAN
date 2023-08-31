@@ -5,3 +5,6 @@
   year={2023},
   publisher={IEEE}
 }
+
+
+The code is built upon kpconv  （https://github.com/HuguesTHOMAS/KPConv-PyTorch）
